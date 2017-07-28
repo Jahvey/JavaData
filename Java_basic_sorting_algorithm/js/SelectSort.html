@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>选择排序</title>
+    <script type="text/javascript">
+
+        function SelectSort() {
+            var tmp;
+            var arr = [0, 5, 4, 333, 91, -99999, 67, 2];
+            if (arr.length < 2);
+            document.write("选择排序前：");
+            for (var i = 0; i < arr.length; i++) {
+                document.write(arr[i] + " ");
+            }
+            for (var i = 0; i < arr.length - 1; i++) {
+                var k = i;
+                for (var j = i; j < arr.length; j++) {
+                    if (arr[j] < arr[k]) k = j;
+                }
+                tmp = arr[i];
+                arr[i] = arr[k];
+                arr[k] = tmp;
+            }
+
+            document.write("\n选择排序后 ：");
+            for (var i = 0; i < arr.length; i++) {
+                document.write(arr[i] + " ");
+            }
+
+
+        }
+        
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="选择排序测试" onclick="SelectSort()" />
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>快速排序</title>
+    <script type="text/javascript">
+
+        var arr = [0, 5, 4, 333, 91, -99999, 67, 2, 78, 87, 66, 41, -11119];
+        var flag1 = 1;
+        var flag2 = 1;
+
+        //获得数组分区的key
+        function partition(arr,left,right,key){
+            var tmp;
+            var  leftPtr=left-1;
+            var rightPtr=right;
+            while (true) {
+                while   (leftPtr<rightPtr&&arr[++leftPtr]<key);
+                while   (leftPtr<rightPtr&&arr[--rightPtr]>key);
+                if (leftPtr>=rightPtr) {
+                    break;
+                }else{
+                    tmp=arr[leftPtr];
+                    arr[leftPtr]=arr[rightPtr];
+                    arr[rightPtr]=tmp;
+                }
+            }
+
+            tmp=arr[leftPtr];
+            arr[leftPtr]=arr[right];
+            arr[right]=tmp;
+            return leftPtr;
+        
+        }
+      
+
+            //进行快速排序
+            function QuickSort(arr, left, right) {
+                if (flag1 > 0) {
+                    document.write("快速排序前：");
+                    for (var i = 0; i < arr.length; i++) {
+                        document.write(arr[i] + " ");
+                    }
+                    flag1--;
+                }
+
+                if (arr.length < 2);
+
+                if (left >= right) {
+                    return;
+                } else {
+                    var key = arr[right];
+                    var partitions = partition(arr, left, right, key);
+                    QuickSort(arr, left, partitions - 1);
+                    QuickSort(arr, partitions + 1, right);
+
+                }
+
+
+               if (flag2>0) {
+                document.write("\n快速排序后 ：");
+                for (var i = 0; i < arr.length; i++) {
+                    document.write(arr[i] + " ");
+                }
+                    flag2--;
+                }
+
+            }
+
+        
+
+        
+
+    </script>
+</head>
+<body>
+    <input type="button" value="快速排序测试" onclick="QuickSort(arr, 0, arr.length - 1)" />
+</body>
+</html>
