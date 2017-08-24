@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/selectAction.js"></script>
+		<script type="text/javascript" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/addsub.js" ></script>
+		<title>Hadoop权威指南</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.title {
+				width: 100%;
+			}
+			
+			.bookBackgroundSize {
+				width: 1200px;
+				height: 500px;
+				margin-left: 100px;
+			}
+			
+			.book1 {
+				width: 350px;
+				height: 350px;
+				margin-top: 20px;
+			}
+			
+			.message,
+			.book1,
+			.shop {
+				float: left;
+			}
+			
+			.message {
+				width: 45%;
+				margin-left: 50px;
+			}
+			
+			h3 {
+				margin-top: 20px;
+				padding-left: 10px;
+			}
+			
+			h4 {
+				font-weight: lighter;
+				margin-top: 15px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #EEEEEE;
+				padding-left: 10px;
+				
+			}
+			
+			.priceMessage {
+				width: 99%;
+				height: 90px;
+				background-color: #EEEEEE;
+			}
+			
+			.colorGray {
+				color: #888888;
+			}
+			
+			.colorRed {
+				color: red;
+			}
+			
+			.priceColor {
+				font-size: 32px;
+				color: red;
+			}
+			
+			.shop {
+				margin-left: 50px;
+			}
+			
+			p,
+			.colorGray,
+			.colorRed {
+				font-size: 14px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+				padding-left: 10px;
+			}
+			.distribution{
+				color: #888888;
+				font-size: 12px;
+			}
+			#distri{
+				border-top: 1px dashed #EEEEEE;
+				padding-top: 10px;
+			}
+			.numTxt{
+				width: 45px;
+				height: 30px;
+				text-align: center;
+				font-size: 20px;
+			}
+			.shoppingCar{
+				height: 30px;
+				margin-top: 30px;
+			}
+			.addButton,.subButton{
+				font-size: 20px;
+				width: 30px;
+			}
+			.addShoppingCar{
+				width: 100px;
+				height: 30px;
+				background-color: red;
+				border:1px solid red;
+				border-radius: 5px;
+				font-size: 15px;
+				color: white;
+				margin-left: 30px;
+			}
+			.buyNow{
+				width: 100px;
+				height: 30px;
+				background-color: #FFCCCC;
+				border:1px solid red;
+				border-radius: 5px;
+				font-size: 15px;
+				color: red;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img class="title" src="../pictures/title.jpg" />
+		<div class="bookBackgroundSize">
+			<p><b>图书</b>>计算机/网络>数据库>数据仓库与数据挖掘>Hadoop权威指南：大数据的存储与分析（第4版）</p>
+			<img class="book1" src="../pictures/Hadoop权威指南：大数据的存储与分析（第4版）.jpg" />
+			<div class="message">
+				<h3>Hadoop权威指南：大数据的存储与分析（第4版）</h3>
+				<h4>引领大数据与云计算，为读者创造巨大价值的高端技术类畅销书，累计销量超过10万册</h4>
+				<p>作者:Tom White著 王海，华东，刘喻，吕粤海 译&#12288;出版社:清华大学出版社&#12288;出版时间:2017年07月  </p>
+				<p>9条评论</p>
+				<p class="priceMessage">
+					<br />
+					<span class="colorGray" style="padding-left: 15px;">当当价</span><br />
+					<span class="colorRed" style="padding-left: 15px;">&yen;</span>
+					<span class="priceColor">100.70<span class="colorRed">(6.81折)</span></span>
+					<span class="colorGray">定价<s>￥148.00</s></span>
+				</p>
+				<p class="distribution" id="distri">配送至：&#12288;
+					<select id="selProvince" onChange="getCity(this.options[this.selectedIndex].value)">
+						<option value="请选择省份">-请选择省份-</option>
+						<option value="北京">北京</option>
+						<option value="四川">四川</option>
+						<option value="广东">广州</option>
+						<option value="其他">其他</option>
+					</select>
+					<select id="selCity">
+						<option>-请选择-</option>
+					</select>
+					<b> &#12288;有货 </b> 满39元免运费
+				</p>
+				<p class="distribution">
+					服&#12288;务：&#12288;
+					由“<b>当当</b>”发货，并提供售后服务。明日00:15前完成下单，预计<b>后天(8月23日)</b>可送达
+				</p>
+				<div class="shoppingCar">
+					<input type="button" onclick="sub()" value="-" class="subButton"/>
+					<input type="text" id="txt" value="1" class="numTxt" />
+					<input type="button" onclick="add()" value="+" class="addButton"/>
+					<input type="button" class="addShoppingCar" value="加入购物车" />
+					<input type="button" class="buyNow" value="立即购买" />
+				</div>
+			</div>
+			<img class="shop" src="../pictures/Hadoop.jpg" />
+		</div>
+	</body>
+
+</html>

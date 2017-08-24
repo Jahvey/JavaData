@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="js/loginData.js" ></script>
+		<script type="text/javascript" src="js/action.js" ></script>
+		<title>登陆</title>
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			#loginForm{
+				margin-left: 30%;
+				margin-top: 100px;
+				height: 400px;
+				width: 400px;
+				border: 1px solid gray;
+				padding-left: 40px;
+				box-shadow: 5px 0px 10px #888888,0px 5px 10px #888888,0px -5px 10px #888888,-5px 0px 10px #888888;
+			}
+			.usernameInput{
+				height: 42px;
+				width: 285px;
+				border: 1px solid #AAAAAA;
+				margin-top: 50px;
+			}
+			.passwordInput{
+				height: 42px;
+				width: 285px;
+				border: 1px solid #AAAAAA;
+				margin-top: 10px;
+			}
+			#username,#password{
+				height: 41px;
+				font-size: 25px;
+				border: none;
+				width: 250px;
+			}
+			#toShopping{
+				margin-top: 60px;
+				margin-left: 100px;
+				width: 300px;
+				height: 40px;
+				background-color: red;
+				border:1px solid red;
+				border-radius: 5px;
+				font-size: 20px;
+				color: white;
+				margin-left: 30px;
+			}
+			.passwordPic,.usernamePic{
+				width: 30px;
+				height: 30px;
+			}
+			.user{
+				margin-top: 58px;
+			}
+			.user,.usernameInput{
+				float: left;
+			}
+			.paword{
+				margin-top: 20px;
+			}
+			.paword,.passwordInput{
+				float: left;
+			}
+			.login1{
+				margin-top: 50px;
+				margin-left: 0px;
+				font-size: 24px;
+			}
+			#rememberPassword,#forgetPassword{
+				float: left;
+				font-size: 14px;
+			}
+			#rememberPassword{
+				margin-top: 15px;
+			}
+			#forgetPassword{
+				margin-left: 100px;
+				padding-top: 15px;
+				color: red;
+			}
+			#register{
+				font-size: 14px;
+				margin-top: 20px;
+				margin-left: 290px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form id="loginForm">
+			<p class="login1">帐号登陆</p>
+			<p class="user">用户名：</p>
+			<div class="usernameInput">
+				<img class="usernamePic" src="pictures/username.jpg"/>
+				<input type="text" name="username" id="username" placeholder="用户名" />
+				<br>	
+			</div>
+			<p class="paword">密&#12288;码：</p>
+			<div class="passwordInput">
+				<img class="passwordPic" src="pictures/password.jpg" />
+				<input type="password" name="password" id="password" placeholder="密码"/><br>
+				<span id="rememberPassword">
+					<input type="checkbox" name="rememberPassword" />七天内自动登录
+				</span>
+				<p id="forgetPassword">忘记密码？</p>
+			</div>
+			<br>
+			<input type="button" id="toShopping" value="登陆" />
+			<p id="register">立即注册</p>
+		</form>
+	</body>
+
+</html>

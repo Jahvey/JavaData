@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+   <script>
+function checkBoxValidate(cb) {
+for (j = 0; j < 1; j++) {
+if (eval("document.myform.ckbox[" + j + "].checked") == true) {
+document.myform.ckbox[j].checked = false;
+if (j == cb) {
+document.myform.ckbox[j].checked = true;
+         }
+      }
+   }
+}
+</script>
+<script type="text/javascript">
+    function showdiv(ch){
+        if(ch.checked){
+            document.getElementById("div").style.display="block";
+        }
+        else{
+            document.getElementById("div").style.display="none";
+        }
+    }
+  </script>
+  <script type="text/javascript">
+    function switchdiv(cb,ch){
+        if(cb.checked){
+            document.getElementById(ch).style.display="block";
+        }
+        else{
+            document.getElementById(ch).style.display="none";
+        }
+    }
+  </script>
+<script type="text/javascript">
+    function showdiv1(ch){
+        if(ch.checked){
+            document.getElementById("div1").style.display="block";
+        }
+        else{
+            document.getElementById("div1").style.display="none";
+        }
+    }
+  </script>
+</head>
+
+<body>
+ <form name=myform>
+  <div align="center">选框 1 
+    <input type="checkbox"  name="ckbox" onClick="checkBoxValidate(0);showdiv1(this);switchdiv(cb,ch)" >
+    
+    选框 2 
+    <input type="checkbox"  name="ckbox" onClick="checkBoxValidate(1);showdiv(this);">
+<div id="div1" style="display:none;width:100px;height:100px;border:solid 1px red;">我是div1</div>
+<div id="div" style="display:none;width:100px;height:100px;border:solid 1px red; position:absolute; left:100px; top:100px;">我是div2</div>
+  
+  </div>
+</form> 
+</body>
+</html>
