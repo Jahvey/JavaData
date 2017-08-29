@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+
+	<!-- 若一个 bean 有多个构造器, 如何通过构造器来为 bean 的属性赋值 -->
+	<!-- 可以根据 index 和 value 进行更加精确的定位. (了解) -->
+	<bean id="car" class="com.wh.spring.helloworld.Car">
+		<constructor-arg value="KUGA" index="1"></constructor-arg>
+		<constructor-arg value="ChangAnFord" index="0"></constructor-arg>
+		<constructor-arg value="250000" type="float"></constructor-arg>
+	</bean>
+
+	<bean id="car2" class="com.wh.spring.helloworld.Car">
+		<constructor-arg value="ChangAnMazda"></constructor-arg>
+		<!-- 若字面值中包含特殊字符, 则可以使用 DCDATA 来进行赋值. (了解) -->
+		<constructor-arg>
+			<value><![CDATA[<ATARZA>]]></value>
+		</constructor-arg>
+		<constructor-arg value="180" type="int"></constructor-arg>
+	</bean>
+
+	<!-- 配置map节点的属性值 -->
+	<bean id="nPerson" class="com.wh.spring.helloworld.collection.NPersion">
+		<property name="age" value="12"></property>
+		<property name="name" value="王振华"></property>
+		<property name="cars">
+
+			<map>
+				<entry key="aa" value-ref="car"></entry>
+				<entry key="bb" value-ref="car2"></entry>
+
+			</map>
+
+		</property>
+
+	</bean>
+
+	<bean id="datasource" class="com.wh.spring.helloworld.collection.DataSource">
+		<property name="properties">
+
+			<!-- 使用pros和pro的属性来对properties赋值 -->
+			<props>
+				<prop key="user">root</prop>
+				<prop key="password">1234</prop>
+				<prop key="jdbcUrl">jdbc:mysql:///test</prop>
+				<prop key="driverClass">com.mysql.jdbc.Driver</prop>
+
+			</props>
+		</property>
+
+
+	</bean>
+
+
+	<!-- 配置单例的集合bean,以供多个bean进行引用 -->
+	<util:list id="carss">
+		<ref bean="car" />
+		<ref bean="car2" />
+
+	</util:list>
+
+
+
+	<bean id="nPerson1" class="com.wh.spring.helloworld.collection.Person1">
+	<property name="name" value="jack"></property>
+	<property name="age" value="21"></property>
+	<property name="cars" ref="carss"></property>
+	
+	</bean>
+	
+	
+	<bean id="person2" class="com.wh.spring.helloworld.collection.Person1" p:age="33" p:name="王震华" p:cars-ref="carss"></bean>
+</beans>

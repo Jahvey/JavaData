@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+<bean id="address" class="com.wh.spring.helloworld.autowire.Address" p:city="北京" p:street="HuiLongGuan"></bean>
+<bean id="address2" class="com.wh.spring.helloworld.autowire.Address" p:city="上海" p:street="东方明珠"></bean>
+
+<bean id="car" class="com.wh.spring.helloworld.autowire.Car" p:brand="Audi" p:price="30000"></bean>
+<!-- 自动装配，bean 名称id和person属性值的名称恰好一致 -->
+<!-- byName 的名字和当前bean的setter风格的属性名进行自动装配，若有匹配的，则自动匹配，若没有匹配的，则不装配 -->
+<!-- byType 的名字和当前bean的setter风格的属性名进行自动装配，若有两个相同的IOC容器的类型匹配，则抛异常 -->
+<bean id="person" class="com.wh.spring.helloworld.autowire.Person"  p:name="王震华" p:address-ref="address" p:car-ref="car"></bean>
+<bean id="person1" class="com.wh.spring.helloworld.autowire.Person"  p:name="王震华" autowire="byName"></bean>
+<!-- <bean id="person2" class="com.wh.spring.helloworld.autowire.Person"  p:name="王震华" autowire="byType"></bean>
+ -->
+ 
+ 
+
+
+
+</beans>

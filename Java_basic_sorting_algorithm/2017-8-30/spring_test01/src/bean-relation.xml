@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+
+<!-- bean的属性 abstract属性为true，这样的bean不能被实例化，只能继承 。
+若一个bean的class属性没有指定，则该bean必须是一个抽象bean -->
+<bean id="address" class="com.wh.spring.helloworld.autowire.Address" abstract="true" p:city="Beijing*" p:street="WuDaoKu"></bean>
+<!--  bean配置的继承：使用bean 的parent属性指定继承哪个bean的配置-->
+<bean id="address2"  parent="address" ></bean>
+
+<bean id="address3"  parent="address2" p:street="DaDaoKOU"></bean>
+<!-- 
+<bean id="address2" class="com.wh.spring.helloworld.autowire.Address" p:city="Beijing" p:street="DaZhongshi"></bean>
+ -->
+
+
+<bean id="car1" class="com.wh.spring.helloworld.autowire.Car" p:brand="Audi1" p:price="50000"></bean>
+
+<!-- 要求再配置Person时，必须要有一个关联的CAR!,换句话说，person依赖于car这个对象 -->
+<bean id="person1" class="com.wh.spring.helloworld.autowire.Person" p:name="Tom"  p:address-ref="address3" depends-on="car1"></bean>
+
+
+
+
+</beans>
