@@ -1,0 +1,6 @@
+D:\360WiFi\c++\ds\study02\01调试和错误处理\003_正则表达式的处理\bin\Debug\003_正则表达式的处理.exe.config
+D:\360WiFi\c++\ds\study02\01调试和错误处理\003_正则表达式的处理\bin\Debug\003_正则表达式的处理.exe
+D:\360WiFi\c++\ds\study02\01调试和错误处理\003_正则表达式的处理\bin\Debug\003_正则表达式的处理.pdb
+D:\360WiFi\c++\ds\study02\01调试和错误处理\003_正则表达式的处理\obj\Debug\003_正则表达式的处理.csprojResolveAssemblyReference.cache
+D:\360WiFi\c++\ds\study02\01调试和错误处理\003_正则表达式的处理\obj\Debug\003_正则表达式的处理.exe
+D:\360WiFi\c++\ds\study02\01调试和错误处理\003_正则表达式的处理\obj\Debug\003_正则表达式的处理.pdb

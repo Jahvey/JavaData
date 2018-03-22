@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01调试和错误处理", "01调试和错误处理\01调试和错误处理.csproj", "{C2355EE7-EF53-4BCD-92CB-CB3CEE8E896B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "003_正则表达式的处理", "003_正则表达式的处理\003_正则表达式的处理.csproj", "{524E4A90-A0E4-47A3-8A18-4BAFF84B6D2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2355EE7-EF53-4BCD-92CB-CB3CEE8E896B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2355EE7-EF53-4BCD-92CB-CB3CEE8E896B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2355EE7-EF53-4BCD-92CB-CB3CEE8E896B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2355EE7-EF53-4BCD-92CB-CB3CEE8E896B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524E4A90-A0E4-47A3-8A18-4BAFF84B6D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524E4A90-A0E4-47A3-8A18-4BAFF84B6D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524E4A90-A0E4-47A3-8A18-4BAFF84B6D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524E4A90-A0E4-47A3-8A18-4BAFF84B6D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
